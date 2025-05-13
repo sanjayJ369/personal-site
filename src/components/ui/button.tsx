@@ -1,9 +1,11 @@
-import { Slot } from "@radix-ui/react-slot"
-import { cva, type VariantProps } from "class-variance-authority"
+"use client";
+import { Slot } from "@radix-ui/react-slot";
+import { cva, type VariantProps } from "class-variance-authority";
 
-import * as React from "react"
+import * as React from "react";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
+import { useSound } from "@/hooks/useSound";
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center whitespace-nowrap rounded-base text-sm font-base ring-offset-white transition-all gap-2 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
@@ -29,28 +31,51 @@ const buttonVariants = cva(
       variant: "default",
       size: "default",
     },
-  },
-)
+  }
+);
 
 function Button({
   className,
   variant,
   size,
   asChild = false,
+  onClick: parentOnClick,
+  onMouseEnter: parentOnMouseEnter,
   ...props
 }: React.ComponentProps<"button"> &
   VariantProps<typeof buttonVariants> & {
-    asChild?: boolean
+    asChild?: boolean;
   }) {
-  const Comp = asChild ? Slot : "button"
+  const { play: clickSound } = useSound("/sounds/click-button-space.mp3");
+  const { play: hovorSound } = useSound("/sounds/hover-button-space.mp3");
 
+  const Comp = asChild ? Slot : "button";
+  const handleClick = async (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    await clickSound();
+    if (parentOnClick) {
+      parentOnClick(e);
+    }
+  };
+
+  const handleMouseEnter = async (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    await hovorSound();
+    if (parentOnMouseEnter) {
+      parentOnMouseEnter(e);
+    }
+  };
   return (
     <Comp
       data-slot="button"
+      onMouseEnter={handleMouseEnter}
       className={cn(buttonVariants({ variant, size, className }))}
+      onClick={handleClick}
       {...props}
     />
-  )
+  );
 }
 
-export { Button, buttonVariants }
+export { Button, buttonVariants };
