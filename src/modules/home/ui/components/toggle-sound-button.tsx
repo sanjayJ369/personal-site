@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { toggleSoundSetting, isSoundEnabled } from "@/lib/sound";
 import { Volume2Icon, VolumeXIcon } from "lucide-react";
 import { useEffect, useState } from "react";
+
 const ToggleSoundButton = () => {
   const [on, setOn] = useState<boolean>(false);
   useEffect(() => {

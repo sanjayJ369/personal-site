@@ -41,11 +41,13 @@ function Button({
   asChild = false,
   onClick: parentOnClick,
   onMouseEnter: parentOnMouseEnter,
+  playClick = true,
+  playHover = true,
   ...props
 }: React.ComponentProps<"button"> &
   VariantProps<typeof buttonVariants> & {
     asChild?: boolean;
-  }) {
+  } & { playClick?: boolean; playHover?: boolean }) {
   const { play: clickSound } = useSound("/sounds/click-button-space.mp3");
   const { play: hovorSound } = useSound("/sounds/hover-button-space.mp3");
 
@@ -53,7 +55,9 @@ function Button({
   const handleClick = async (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
-    await clickSound();
+    if (playClick) {
+      clickSound();
+    }
     if (parentOnClick) {
       parentOnClick(e);
     }
@@ -62,7 +66,9 @@ function Button({
   const handleMouseEnter = async (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
-    await hovorSound();
+    if (playHover) {
+      hovorSound();
+    }
     if (parentOnMouseEnter) {
       parentOnMouseEnter(e);
     }

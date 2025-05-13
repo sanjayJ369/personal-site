@@ -13,7 +13,7 @@ export function useSound(path: string) {
     if (!audioRef.current) return;
 
     audioRef.current.currentTime = 0;
-    audioRef.current.volume = isSoundEnabled() ? 0.15 : 0.0;
+    audioRef.current.volume = isSoundEnabled() ? 0.5 : 0.0;
 
     try {
       const playPromise = audioRef.current.play();

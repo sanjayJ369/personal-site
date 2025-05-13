@@ -1,6 +1,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import ToggleSoundButton from "./toggle-sound-button";
+import ToggleThemeButton from "./toogle-theme-button";
 
 const HomeNavBar = () => {
   return (
@@ -21,6 +22,7 @@ const HomeNavBar = () => {
       </div>
       <div>
         <ToggleSoundButton />
+        <ToggleThemeButton />
       </div>
     </div>
   );
