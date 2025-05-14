@@ -1,13 +1,18 @@
-import { getSectionData, getSectionSlugs } from "@/lib/content";
+import { getSectionData } from "@/lib/content";
 import ContentCard from "./content-card";
 
 interface ContentCardsProps {
   contentType: string;
 }
 
-const ContentCards = ({ contentType }: ContentCardsProps) => {
-  return getSectionData(contentType).map((data) => (
-    <ContentCard key={data.date} data={data} />
+const ContentCards = async ({ contentType }: ContentCardsProps) => {
+  const content = await getSectionData(contentType);
+  return content.map((data) => (
+    <ContentCard
+      path={`${contentType}/${data.slug}`}
+      key={data.date}
+      data={data}
+    />
   ));
 };
 

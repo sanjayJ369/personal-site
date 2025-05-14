@@ -10,10 +10,12 @@ import {
 } from "@/components/ui/card";
 import { FrontmatterData } from "@/lib/content";
 import Image from "next/image";
+import Link from "next/link";
 interface ContentCardProps {
+  path: string;
   data: FrontmatterData;
 }
-const ContentCard = ({ data }: ContentCardProps) => {
+const ContentCard = ({ data, path }: ContentCardProps) => {
   return (
     <Card className="w-full max-w-sm">
       <CardHeader>
@@ -30,7 +32,7 @@ const ContentCard = ({ data }: ContentCardProps) => {
               height={300}
             />
           )}
-          <div className="flex gap-2">
+          <div className="flex gap-2 flex-wrap">
             {data.tags?.map((tag) => (
               <Badge key={tag} variant="neutral">
                 {tag}
@@ -41,7 +43,9 @@ const ContentCard = ({ data }: ContentCardProps) => {
         </CardDescription>
       </CardContent>
       <CardFooter>
-        <Button className="w-full">View {data.title}</Button>
+        <Button asChild className="w-full">
+          <Link href={`${path}`}>View {data.title}</Link>
+        </Button>
       </CardFooter>
     </Card>
   );

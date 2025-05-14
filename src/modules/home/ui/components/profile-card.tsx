@@ -1,14 +1,17 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import ImageCard from "@/components/ui/image-card";
+import Image from "next/image";
 
 const ProfileCard = () => {
   return (
-    <div className="relative flex flex-col justify-center border-4 border-solid">
+    <div className="relative flex flex-col justify-center border-4 border-solid border-border rounded-base">
       <div className="relative w-full mb-6 md:mb-12">
-        <ImageCard
-          caption=""
-          imageUrl="https://hips.hearstapps.com/hmg-prod/images/flowers-trees-and-bushes-reach-their-peak-of-full-bloom-in-news-photo-1678292967.jpg"
-          className="w-full aspect-[6/1] "
+        <Image
+          src="/images/banner.png"
+          alt="Banner image"
+          className="w-full aspect-[6/1]"
+          width={1200}
+          height={200}
         />
         <Avatar className="absolute bottom-[-20%] left-[5%]  md:w-24 md:h-24 ">
           <AvatarImage src="https://github.com/shadcn.png" alt="sanjay" />

@@ -1,8 +1,9 @@
-import fs from "fs";
-import path from "path";
+"use server";
+import path from "node:path";
 import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
+import { readdirSync, readFileSync } from "fs";
 
 const sectionsPath = path.join(process.cwd(), "src/content/");
 
@@ -14,20 +15,20 @@ export interface FrontmatterData {
   image?: string;
 }
 
-export function getSectionSlugs(section: string) {
+export async function getSectionSlugs(section: string) {
   const dir = path.join(sectionsPath, section);
-  return fs.readdirSync(dir).filter((file) => file.endsWith(".md"));
+  return readdirSync(dir).filter((file) => file.endsWith(".md"));
 }
 
-export function getSectionData(section: string) {
-  const slugs = getSectionSlugs(section);
+export async function getSectionData(section: string) {
+  const slugs = await getSectionSlugs(section);
   return slugs
     .map((slug) => {
       const filePath = path.join(sectionsPath, section, slug);
-      const fileContents = fs.readFileSync(filePath, "utf8");
+      const fileContents = readFileSync(filePath, "utf8");
 
       const { data } = matter(fileContents) as { data: FrontmatterData };
-      return data;
+      return { slug: slug, ...data };
     })
     .sort((a, b) => {
       if (!a.date || !b.date) return 0;
@@ -40,4 +41,16 @@ export function getSectionData(section: string) {
 
       return bDate.getTime() - aDate.getTime();
     });
+}
+
+export async function getMarkDownContent(section: string, slug: string) {
+  const fullPath = path.join(sectionsPath, section, `${slug}`);
+  const fileContent = readFileSync(fullPath, "utf-8");
+  const { data, content } = matter(fileContent);
+
+  return {
+    slug,
+    data,
+    content,
+  };
 }
