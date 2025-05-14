@@ -3,7 +3,7 @@ import ImageCard from "@/components/ui/image-card";
 
 const ProfileCard = () => {
   return (
-    <div className="relative w-4/5 flex flex-col justify-center border-4 border-solid">
+    <div className="relative flex flex-col justify-center border-4 border-solid">
       <div className="relative w-full mb-6 md:mb-12">
         <ImageCard
           caption=""
