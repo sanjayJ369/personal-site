@@ -31,7 +31,12 @@ const ToggleThemeButton = () => {
   };
 
   return (
-    <Button onClick={handleToggle} size={"icon"} playClick={false}>
+    <Button
+      className="m-1"
+      onClick={handleToggle}
+      size={"icon"}
+      playClick={false}
+    >
       {currTheme == "dark" ? <MoonIcon /> : <SunIcon />}
     </Button>
   );

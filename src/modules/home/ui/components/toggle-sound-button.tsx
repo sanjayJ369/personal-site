@@ -12,6 +12,7 @@ const ToggleSoundButton = () => {
 
   return (
     <Button
+      className="m-1"
       onClick={() => {
         setOn(!on);
         toggleSoundSetting();
