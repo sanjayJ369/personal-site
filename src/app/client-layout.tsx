@@ -10,10 +10,6 @@ export default function ClientLayout({
 }) {
   useEffect(() => {
     const directions: [number, number][] = [
-      [40, 0], // east →
-      [-40, 0], // west ←
-      [0, 40], // south ↓
-      [0, -40], // north ↑
       [40, 40], // southeast ↘
       [-40, -40], // northwest ↖
       [40, -40], // northeast ↗

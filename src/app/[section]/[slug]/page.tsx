@@ -10,7 +10,7 @@ export default async function SectionPage({
   const content = await getMarkDownContent(params.section, params.slug);
   return (
     <main className=" w-full flex justify-center items-center">
-      <div className="w-4/5">
+      <div className="w-4/5 bg-secondary-background my-4 p-3 retro-border">
         <h1 className="text-2xl">{content.data.title}</h1>
         <ul>
           <li>created at: {content.data.date}</li>

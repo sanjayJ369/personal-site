@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const HomeNavBar = () => {
   return (
-    <div className="border-b-8 border-solid p-3 flex items-center justify-center">
+    <div className="border-b-8 border-solid p-3 flex items-center justify-center bg-background">
       <div className="w-4/5 flex justify-between items-center">
         <div className="flex items-center h-12">
           <Avatar className=" w-8 h-8 md:w-12 md:h-12">

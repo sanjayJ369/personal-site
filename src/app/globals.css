@@ -4,110 +4,79 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Neobrutalism + Retro Pop Light Theme */
-  --background: #ffffff; /* Pure white background */
-  --secondary-background: #f5f5f5;
-  --foreground: #000000; /* Pure black text */
+  /* Neobrutalism Light Theme */
+  --background: #ffffff; /* White background - 60% usage */
+  --secondary-background: #fff8e8; /* Cream secondary - 25% usage */
+  --foreground: #000000; /* Black text - for all text */
   --main-foreground: #000000;
-  --main: #d12128; /* Bold red from the image */
-  --accent: #01344f; /* Deep blue from the image */
-  --border: #000000; /* Black borders for brutalism */
-  --ring: #d12128;
+  --main: #ff3c38; /* Vibrant red - 10% for key elements */
+  --accent: #0064fb; /* Bold blue - 5% for accents */
+  --border: #000000; /* Black borders - all borders */
+  --ring: #ff3c38;
   --overlay: rgba(0, 0, 0, 0.85);
   --shadow: 4px 4px 0px 0px #000000; /* Harsh black shadows */
 
   /* Retro Pop Colors - Bold and saturated */
-  --retro-1: #d12128; /* Bold red */
-  --retro-2: #ff6b35; /* Electric orange */
-  --retro-3: #01344f; /* Deep blue */
-  --retro-4: #ffe66d; /* Bright yellow */
-  --retro-5: #8b5cf6; /* Purple */
-  --retro-6: #06ffa5; /* Neon green */
-  --retro-7: #ff006e; /* Hot pink */
-  --retro-8: #fb8500; /* Orange */
-  --retro-9: #023047; /* Dark teal */
-  --retro-10: #fae3ac; /* Cream from image */
-
-  /* High contrast palette */
-  --neon-pink: #ff006e;
-  --electric-blue: #0080ff;
-  --neon-green: #06ffa5;
-  --cyber-yellow: #ffe66d;
-  --retro-purple: #8b5cf6;
-  --sunset-orange: #ff6b35;
-  --miami-cyan: #00f5ff;
-  --synthwave-magenta: #ff1493;
-  --vapor-purple: #8b5cf6;
-  --laser-red: #d12128;
-  --matrix-green: #06ffa5;
-  --arcade-blue: #01344f;
-  --cosmic-violet: #8b5cf6;
-  --plasma-pink: #ff006e;
-  --terminal-amber: #ffe66d;
-  --hologram-teal: #00f5ff;
-
-  /* Chart colors */
-  --chart-1: #d12128;
-  --chart-2: #01344f;
-  --chart-3: #ffe66d;
-  --chart-4: #ff6b35;
-  --chart-5: #8b5cf6;
-  --chart-active-dot: #000000;
+  --retro-1: #ff3c38; /* Bold red - primary accent */
+  --retro-2: #ff8c42; /* Orange - secondary accent */
+  --retro-3: #0064fb; /* Bold blue - tertiary accent */
+  --retro-4: #ffed47; /* Yellow - quaternary accent */
+  --retro-5: #9d4edd; /* Purple - use sparingly */
+  --retro-6: #00e571; /* Neon green - use sparingly */
+  --retro-7: #ff2b9d; /* Hot pink - use sparingly */
+  --retro-8: #ff9600; /* Deep orange - use sparingly */
+  --retro-9: #0a2463; /* Dark blue - use sparingly */
+  --retro-10: #fff8e8; /* Cream - large areas */
 }
 
 .dark {
-  /* Neobrutalism + Retro Pop Dark Theme */
-  --background: #000000; /* Pure black background */
-  --secondary-background: #1a1a1a;
-  --foreground: #ffffff; /* Pure white text */
-  --main-foreground: #ffffff;
-  --main: #ff006e; /* Hot pink for dark mode */
-  --accent: #06ffa5; /* Neon green accent */
-  --border: #ffffff; /* White borders on black */
-  --ring: #ff006e;
+  /* Neobrutalism Dark Theme */
+  --background: #0a0a0a; /* Near black - 60% usage */
+  --secondary-background: #1a1a1a; /* Dark gray secondary - 25% usage */
+  --foreground: #ffffff; /* White text - for all text */
+  --main-foreground: #ffffff; /* Changed to WHITE text for main color elements */
+  --main: #000000; /* SAME vibrant red - 10% for key elements */
+  --accent: #4cc9ff; /* Lighter blue - 5% for accents */
+  --border: #ffffff; /* White borders - all borders */
+  --ring: #ff3c38;
   --overlay: rgba(255, 255, 255, 0.1);
-  --shadow: 4px 4px 0px 0px #ffffff; /* White shadows on black */
+  --shadow: 4px 4px 0px 0px #ffffff; /* Harsh white shadows */
 
-  /* Dark mode retro colors - high contrast neons */
-  --retro-1: #ff006e; /* Hot pink */
-  --retro-2: #ff6b35; /* Electric orange */
-  --retro-3: #00f5ff; /* Cyan */
-  --retro-4: #ffe66d; /* Bright yellow */
-  --retro-5: #8b5cf6; /* Purple */
-  --retro-6: #06ffa5; /* Neon green */
-  --retro-7: #d12128; /* Bold red */
-  --retro-8: #fb8500; /* Orange */
-  --retro-9: #00f5ff; /* Cyan */
-  --retro-10: #ffffff; /* Pure white */
-
-  /* Enhanced neon colors for dark mode */
-  --neon-pink: #ff006e;
-  --electric-blue: #00f5ff;
-  --neon-green: #06ffa5;
-  --cyber-yellow: #ffe66d;
-  --retro-purple: #8b5cf6;
-  --sunset-orange: #ff6b35;
-  --miami-cyan: #00f5ff;
-  --synthwave-magenta: #ff1493;
-  --vapor-purple: #a855f7;
-  --laser-red: #ff0040;
-  --matrix-green: #06ffa5;
-  --arcade-blue: #0080ff;
-  --cosmic-violet: #8b5cf6;
-  --plasma-pink: #ff69b4;
-  --terminal-amber: #ffe66d;
-  --hologram-teal: #00f5ff;
-
-  /* Dark mode chart colors */
-  --chart-1: #ff006e;
-  --chart-2: #06ffa5;
-  --chart-3: #ffe66d;
-  --chart-4: #ff6b35;
-  --chart-5: #8b5cf6;
-  --chart-active-dot: #ffffff;
+  /* Dark mode retro colors - Still bold & saturated */
+  --retro-1: #ff3c38; /* SAME Bold red */
+  --retro-2: #ff8c42; /* SAME Orange */
+  --retro-3: #4cc9ff; /* Lighter blue for dark mode */
+  --retro-4: #ffed47; /* SAME Yellow */
+  --retro-5: #c77dff; /* Brighter purple for dark mode */
+  --retro-6: #00e571; /* SAME Neon green */
+  --retro-7: #ff2b9d; /* SAME Hot pink */
+  --retro-8: #ff9600; /* SAME Orange */
+  --retro-9: #a6e1fa; /* Light blue for dark mode */
+  --retro-10: #1a1a1a; /* Dark gray for large areas */
 }
 
 @theme inline {
+  --animate-marquee: marquee 5s linear infinite;
+  --animate-marquee2: marquee2 5s linear infinite;
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes marquee2 {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
   --color-main: var(--main);
   --color-accent: var(--accent);
   --color-background: var(--background);
@@ -388,5 +357,14 @@
   }
   .border-retro-10 {
     border-color: var(--retro-10);
+  }
+}
+
+@layer utilities {
+  .animate-marquee {
+    animation: marquee 25s linear infinite;
+  }
+  .animate-marquee2 {
+    animation: marquee2 25s linear infinite;
   }
 }
