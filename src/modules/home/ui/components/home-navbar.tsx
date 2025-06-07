@@ -2,24 +2,28 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import ToggleSoundButton from "./toggle-sound-button";
 import ToggleThemeButton from "./toogle-theme-button";
+import Link from "next/link";
 
 const HomeNavBar = () => {
   return (
     <div className="border-b-8 border-solid p-3 flex items-center justify-center">
       <div className="w-4/5 flex justify-between items-center">
         <div className="flex items-center h-12">
-          <Avatar className="sm:hidden">
-            <AvatarImage src="https://github.com/shadcn.png" alt="sanjay" />
-            <AvatarFallback>S</AvatarFallback>
+          <Avatar className=" w-8 h-8 md:w-12 md:h-12">
+            <AvatarImage
+              src="images/profile.png"
+              alt="sanjay"
+              className="object-cover "
+            />
+            <AvatarFallback className="text-xl">S</AvatarFallback>
           </Avatar>
 
-          <Button
-            className="hidden sm:inline-flex p-6"
-            variant="noShadow"
-            size="lg"
+          <Link
+            href="/"
+            className="text-3xl hidden sm:inline-flex p-6 cursor-pointer"
           >
-            <p className="text-3xl">SANJAY</p>
-          </Button>
+            SANJAY
+          </Link>
         </div>
         <div>
           <ToggleSoundButton />

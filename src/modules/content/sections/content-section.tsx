@@ -8,7 +8,7 @@ const ContentSection = ({ contentType }: ContentSectionProps) => {
   return (
     <div className="my-1 md:my-3">
       <h1 className="text-xl md:text-3xl my-1">{contentType.toUpperCase()}</h1>
-      <div className="flex flex-wrap gap-3 md:gap-5 justify-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 ">
         <ContentCards contentType={contentType} />
       </div>
     </div>

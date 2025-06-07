@@ -1,17 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { JetBrains_Mono, Orbitron, Bungee } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
-import HomeNavBar from "@/modules/home/ui/components/home-navbar";
+import ClientLayout from "./client-layout";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const jetBrainsMono = JetBrains_Mono({
+  weight: ["400", "700"],
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const orbitron = Orbitron({
+  weight: ["700", "800", "900"], // heavy weights for brutal impact
   subsets: ["latin"],
+  variable: "--font-orbitron",
+});
+
+const bungee = Bungee({
+  weight: ["400"],
+  subsets: ["latin"],
+  variable: "--font-bungee",
 });
 
 export const metadata: Metadata = {
@@ -25,23 +31,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
-      <html lang="en" suppressHydrationWarning>
-        <head />
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <HomeNavBar />
-            {children}
-          </ThemeProvider>
-        </body>
-      </html>
-    </>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${orbitron.variable} ${bungee.variable}`}
+    >
+      <head />
+      <body className={`${jetBrainsMono.className} antialiased text-2xl`}>
+        <ClientLayout>{children}</ClientLayout>
+      </body>
+    </html>
   );
 }

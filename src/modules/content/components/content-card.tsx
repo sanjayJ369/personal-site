@@ -17,9 +17,9 @@ interface ContentCardProps {
 }
 const ContentCard = ({ data, path }: ContentCardProps) => {
   return (
-    <Card className="w-full max-w-sm">
+    <Card className="w-full max-w-sm flex justify-between">
       <CardHeader>
-        <CardTitle>{data.title}</CardTitle>
+        <CardTitle className="font-bold text-2xl">{data.title}</CardTitle>
       </CardHeader>
       <CardContent>
         <CardDescription className="flex flex-col gap-1">

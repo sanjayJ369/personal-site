@@ -4,42 +4,112 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(98% 0.015 295);
-  --secondary-background: oklch(95% 0.02 295);
-  --foreground: oklch(20% 0.02 300);
-  --main-foreground: oklch(15% 0.04 300);
-  --main: oklch(70% 0.25 295);
-  --border: oklch(30% 0.1 300);
-  --ring: oklch(70% 0.25 295);
-  --overlay: oklch(0% 0 0 / 0.8);
-  --shadow: 0px 4px 0px 0px var(--border);
-  --chart-1: #bb00ff;
-  --chart-2: #ff4da6;
-  --chart-3: #facc00;
-  --chart-4: #05e17a;
-  --chart-5: #7a83ff;
-  --chart-active-dot: #000;
+  /* Neobrutalism + Retro Pop Light Theme */
+  --background: #ffffff; /* Pure white background */
+  --secondary-background: #f5f5f5;
+  --foreground: #000000; /* Pure black text */
+  --main-foreground: #000000;
+  --main: #d12128; /* Bold red from the image */
+  --accent: #01344f; /* Deep blue from the image */
+  --border: #000000; /* Black borders for brutalism */
+  --ring: #d12128;
+  --overlay: rgba(0, 0, 0, 0.85);
+  --shadow: 4px 4px 0px 0px #000000; /* Harsh black shadows */
+
+  /* Retro Pop Colors - Bold and saturated */
+  --retro-1: #d12128; /* Bold red */
+  --retro-2: #ff6b35; /* Electric orange */
+  --retro-3: #01344f; /* Deep blue */
+  --retro-4: #ffe66d; /* Bright yellow */
+  --retro-5: #8b5cf6; /* Purple */
+  --retro-6: #06ffa5; /* Neon green */
+  --retro-7: #ff006e; /* Hot pink */
+  --retro-8: #fb8500; /* Orange */
+  --retro-9: #023047; /* Dark teal */
+  --retro-10: #fae3ac; /* Cream from image */
+
+  /* High contrast palette */
+  --neon-pink: #ff006e;
+  --electric-blue: #0080ff;
+  --neon-green: #06ffa5;
+  --cyber-yellow: #ffe66d;
+  --retro-purple: #8b5cf6;
+  --sunset-orange: #ff6b35;
+  --miami-cyan: #00f5ff;
+  --synthwave-magenta: #ff1493;
+  --vapor-purple: #8b5cf6;
+  --laser-red: #d12128;
+  --matrix-green: #06ffa5;
+  --arcade-blue: #01344f;
+  --cosmic-violet: #8b5cf6;
+  --plasma-pink: #ff006e;
+  --terminal-amber: #ffe66d;
+  --hologram-teal: #00f5ff;
+
+  /* Chart colors */
+  --chart-1: #d12128;
+  --chart-2: #01344f;
+  --chart-3: #ffe66d;
+  --chart-4: #ff6b35;
+  --chart-5: #8b5cf6;
+  --chart-active-dot: #000000;
 }
 
 .dark {
-  --background: oklch(15% 0.04 295);
-  --secondary-background: oklch(10% 0.02 295);
-  --foreground: oklch(95% 0.01 295);
-  --main-foreground: oklch(100% 0 0);
-  --main: oklch(70% 0.25 295);
-  --border: oklch(35% 0.12 295);
-  --ring: oklch(85% 0.25 295);
-  --shadow: 0px 4px 0px 0px var(--border);
-  --chart-1: #d259ff;
-  --chart-2: #ff66b2;
-  --chart-3: #e0b700;
-  --chart-4: #04c86d;
-  --chart-5: #7a83ff;
-  --chart-active-dot: #fff;
+  /* Neobrutalism + Retro Pop Dark Theme */
+  --background: #000000; /* Pure black background */
+  --secondary-background: #1a1a1a;
+  --foreground: #ffffff; /* Pure white text */
+  --main-foreground: #ffffff;
+  --main: #ff006e; /* Hot pink for dark mode */
+  --accent: #06ffa5; /* Neon green accent */
+  --border: #ffffff; /* White borders on black */
+  --ring: #ff006e;
+  --overlay: rgba(255, 255, 255, 0.1);
+  --shadow: 4px 4px 0px 0px #ffffff; /* White shadows on black */
+
+  /* Dark mode retro colors - high contrast neons */
+  --retro-1: #ff006e; /* Hot pink */
+  --retro-2: #ff6b35; /* Electric orange */
+  --retro-3: #00f5ff; /* Cyan */
+  --retro-4: #ffe66d; /* Bright yellow */
+  --retro-5: #8b5cf6; /* Purple */
+  --retro-6: #06ffa5; /* Neon green */
+  --retro-7: #d12128; /* Bold red */
+  --retro-8: #fb8500; /* Orange */
+  --retro-9: #00f5ff; /* Cyan */
+  --retro-10: #ffffff; /* Pure white */
+
+  /* Enhanced neon colors for dark mode */
+  --neon-pink: #ff006e;
+  --electric-blue: #00f5ff;
+  --neon-green: #06ffa5;
+  --cyber-yellow: #ffe66d;
+  --retro-purple: #8b5cf6;
+  --sunset-orange: #ff6b35;
+  --miami-cyan: #00f5ff;
+  --synthwave-magenta: #ff1493;
+  --vapor-purple: #a855f7;
+  --laser-red: #ff0040;
+  --matrix-green: #06ffa5;
+  --arcade-blue: #0080ff;
+  --cosmic-violet: #8b5cf6;
+  --plasma-pink: #ff69b4;
+  --terminal-amber: #ffe66d;
+  --hologram-teal: #00f5ff;
+
+  /* Dark mode chart colors */
+  --chart-1: #ff006e;
+  --chart-2: #06ffa5;
+  --chart-3: #ffe66d;
+  --chart-4: #ff6b35;
+  --chart-5: #8b5cf6;
+  --chart-active-dot: #ffffff;
 }
 
 @theme inline {
   --color-main: var(--main);
+  --color-accent: var(--accent);
   --color-background: var(--background);
   --color-secondary-background: var(--secondary-background);
   --color-foreground: var(--foreground);
@@ -47,25 +117,152 @@
   --color-border: var(--border);
   --color-overlay: var(--overlay);
   --color-ring: var(--ring);
+
+  /* Theme-aware retro color mappings */
+  --color-retro-1: var(--retro-1);
+  --color-retro-2: var(--retro-2);
+  --color-retro-3: var(--retro-3);
+  --color-retro-4: var(--retro-4);
+  --color-retro-5: var(--retro-5);
+  --color-retro-6: var(--retro-6);
+  --color-retro-7: var(--retro-7);
+  --color-retro-8: var(--retro-8);
+  --color-retro-9: var(--retro-9);
+  --color-retro-10: var(--retro-10);
+
+  /* Extended color mappings */
+  --color-neon-pink: var(--neon-pink);
+  --color-electric-blue: var(--electric-blue);
+  --color-neon-green: var(--neon-green);
+  --color-cyber-yellow: var(--cyber-yellow);
+  --color-retro-purple: var(--retro-purple);
+  --color-sunset-orange: var(--sunset-orange);
+  --color-miami-cyan: var(--miami-cyan);
+  --color-synthwave-magenta: var(--synthwave-magenta);
+  --color-vapor-purple: var(--vapor-purple);
+  --color-laser-red: var(--laser-red);
+  --color-matrix-green: var(--matrix-green);
+  --color-arcade-blue: var(--arcade-blue);
+  --color-cosmic-violet: var(--cosmic-violet);
+  --color-plasma-pink: var(--plasma-pink);
+  --color-terminal-amber: var(--terminal-amber);
+  --color-hologram-teal: var(--hologram-teal);
+
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
 
-  --spacing-boxShadowX: 0px;
-  --spacing-boxShadowY: 4px;
-  --spacing-reverseBoxShadowX: -0px;
-  --spacing-reverseBoxShadowY: -4px;
-  --radius-base: 5px;
+  --spacing-boxShadowX: 3px;
+  --spacing-boxShadowY: 3px;
+  --spacing-reverseBoxShadowX: -3px;
+  --spacing-reverseBoxShadowY: -3px;
+  --radius-base: 2px;
   --shadow-shadow: var(--shadow);
   --font-weight-base: 600;
   --font-weight-heading: 900;
 }
 
 @layer base {
+  html {
+    transform: scale(1);
+    image-rendering: pixelated;
+    font-size: 16px;
+  }
+
   body {
     @apply text-foreground font-base bg-background;
+
+    background-image: linear-gradient(
+        to right,
+        var(--border) 2px,
+        transparent 2px
+      ),
+      linear-gradient(to bottom, var(--border) 2px, transparent 2px);
+    background-size: 40px 40px;
+    animation: gridMove 2s linear infinite;
+  }
+
+  @keyframes tvScan {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 0 4px;
+    }
+  }
+
+  @keyframes scanMove {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+
+  @keyframes gridMove {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: var(--x-offset, 40px) var(--y-offset, 0px);
+    }
+  }
+
+  @keyframes waveMove {
+    0%,
+    100% {
+      transform: skewY(2deg) scaleX(1);
+    }
+    25% {
+      transform: skewY(1deg) scaleX(1.02);
+    }
+    50% {
+      transform: skewY(-1deg) scaleX(0.98);
+    }
+    75% {
+      transform: skewY(0deg) scaleX(1.01);
+    }
+  }
+
+  @keyframes rainbowMove {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 200% 50%;
+    }
+  }
+
+  @keyframes waveDistort {
+    0%,
+    100% {
+      background-position: 0% 0%;
+      transform: skewX(0deg);
+    }
+    25% {
+      background-position: 50% 0%;
+      transform: skewX(1deg);
+    }
+    50% {
+      background-position: 100% 0%;
+      transform: skewX(-1deg);
+    }
+    75% {
+      background-position: 50% 0%;
+      transform: skewX(0.5deg);
+    }
+  }
+
+  @keyframes hueCycle {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+    100% {
+      filter: hue-rotate(360deg);
+    }
   }
 
   h1,
@@ -75,5 +272,121 @@
   h5,
   h6 {
     @apply font-heading;
+  }
+
+  .retro-glow {
+    box-shadow: 0 0 8px var(--main), 0 0 20px var(--main),
+      4px 4px 0px var(--border);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .retro-glow:hover {
+    box-shadow: 0 0 15px var(--main), 0 0 30px var(--main), 0 0 45px var(--main),
+      4px 4px 0px var(--border);
+    transform: translate(-2px, -2px);
+  }
+
+  .retro-border {
+    border: 3px solid var(--border);
+    box-shadow: 4px 4px 0px var(--border);
+  }
+
+  .neon-text {
+    color: var(--main);
+    text-shadow: 0 0 8px var(--main), 0 0 16px var(--main), 0 0 24px var(--main);
+  }
+
+  /* Theme-aware utility classes */
+  .text-retro-1 {
+    color: var(--retro-1);
+  }
+  .text-retro-2 {
+    color: var(--retro-2);
+  }
+  .text-retro-3 {
+    color: var(--retro-3);
+  }
+  .text-retro-4 {
+    color: var(--retro-4);
+  }
+  .text-retro-5 {
+    color: var(--retro-5);
+  }
+  .text-retro-6 {
+    color: var(--retro-6);
+  }
+  .text-retro-7 {
+    color: var(--retro-7);
+  }
+  .text-retro-8 {
+    color: var(--retro-8);
+  }
+  .text-retro-9 {
+    color: var(--retro-9);
+  }
+  .text-retro-10 {
+    color: var(--retro-10);
+  }
+
+  .bg-retro-1 {
+    background-color: var(--retro-1);
+  }
+  .bg-retro-2 {
+    background-color: var(--retro-2);
+  }
+  .bg-retro-3 {
+    background-color: var(--retro-3);
+  }
+  .bg-retro-4 {
+    background-color: var(--retro-4);
+  }
+  .bg-retro-5 {
+    background-color: var(--retro-5);
+  }
+  .bg-retro-6 {
+    background-color: var(--retro-6);
+  }
+  .bg-retro-7 {
+    background-color: var(--retro-7);
+  }
+  .bg-retro-8 {
+    background-color: var(--retro-8);
+  }
+  .bg-retro-9 {
+    background-color: var(--retro-9);
+  }
+  .bg-retro-10 {
+    background-color: var(--retro-10);
+  }
+
+  .border-retro-1 {
+    border-color: var(--retro-1);
+  }
+  .border-retro-2 {
+    border-color: var(--retro-2);
+  }
+  .border-retro-3 {
+    border-color: var(--retro-3);
+  }
+  .border-retro-4 {
+    border-color: var(--retro-4);
+  }
+  .border-retro-5 {
+    border-color: var(--retro-5);
+  }
+  .border-retro-6 {
+    border-color: var(--retro-6);
+  }
+  .border-retro-7 {
+    border-color: var(--retro-7);
+  }
+  .border-retro-8 {
+    border-color: var(--retro-8);
+  }
+  .border-retro-9 {
+    border-color: var(--retro-9);
+  }
+  .border-retro-10 {
+    border-color: var(--retro-10);
   }
 }
