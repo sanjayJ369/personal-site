@@ -51,7 +51,7 @@ export default function MarkdownRenderer({ content }: Props) {
         h6: ({ node, ...props }) => (
           <h6 {...props} className="text-base font-bold mt-4 mb-2" />
         ),
-        p: ({ node, ...props }) => <p {...props} className="my-4" />,
+        p: ({ node, ...props }) => <p {...props} className="my-1" />,
         blockquote: ({ node, ...props }) => (
           <blockquote
             {...props}
@@ -85,7 +85,7 @@ export default function MarkdownRenderer({ content }: Props) {
         ol: ({ node, ...props }) => (
           <ol {...props} className="list-decimal pl-6 my-4" />
         ),
-        li: ({ node, ...props }) => <li {...props} className="my-1" />,
+        li: ({ node, ...props }) => <li {...props} className="m-3" />,
         hr: ({ node, ...props }) => (
           <hr {...props} className="my-8 border-border" />
         ),

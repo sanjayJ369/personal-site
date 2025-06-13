@@ -9,19 +9,22 @@ export default function ClientLayout({
   children: React.ReactNode;
 }) {
   useEffect(() => {
-    const directions: [number, number][] = [
-      [40, 40], // southeast ↘
-      [-40, -40], // northwest ↖
-      [40, -40], // northeast ↗
-      [-40, 40], // southwest ↙
+    // Direction choices: NE, SE, SW, NW
+    const directions = [
+      { x: "40px", y: "-40px" },   // NE
+      { x: "40px", y: "40px" },    // SE
+      { x: "-40px", y: "40px" },   // SW
+      { x: "-40px", y: "-40px" }   // NW
     ];
-
-    const [x, y] = directions[Math.floor(Math.random() * directions.length)];
-
-    document.body.style.setProperty("--x-offset", `${x}px`);
-    document.body.style.setProperty("--y-offset", `${y}px`);
+    
+    // Pick a random direction
+    const randomDirection = directions[Math.floor(Math.random() * directions.length)];
+    
+    // Set CSS variables
+    document.documentElement.style.setProperty('--x-offset', randomDirection.x);
+    document.documentElement.style.setProperty('--y-offset', randomDirection.y);
   }, []);
-
+  
   return (
     <ThemeProvider
       attribute="class"

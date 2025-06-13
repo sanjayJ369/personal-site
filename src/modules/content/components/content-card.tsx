@@ -25,11 +25,13 @@ const ContentCard = ({ data, path }: ContentCardProps) => {
         <CardDescription className="flex flex-col gap-1">
           {data.image && (
             <Image
-              className="border-border border-2 rounded-base"
+              className="border-border border-2 rounded-base object-cover"
               src={data.image}
               alt={data.title!}
-              width={500}
-              height={300}
+              width={0}
+              height={200}
+              sizes="100vw"
+              style={{ width: "100%", height: "200px" }}
             />
           )}
           <div className="flex gap-2 flex-wrap">
@@ -42,7 +44,32 @@ const ContentCard = ({ data, path }: ContentCardProps) => {
           <p>{data.description}</p>
         </CardDescription>
       </CardContent>
-      <CardFooter>
+      <CardFooter className="flex flex-col">
+        {data.repolink && (
+          <div className="flex gap-2 w-full mb-2">
+            {data.livedemo && (
+              <Button asChild className="flex-1">
+                <Link
+                  href={data.livedemo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Live Demo
+                </Link>
+              </Button>
+            )}
+            <Button asChild className="flex-1">
+              <Link
+                href={data.repolink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Repository
+              </Link>
+            </Button>
+          </div>
+        )}
+
         <Button asChild className="w-full">
           <Link href={`${path}`}>View {data.title}</Link>
         </Button>

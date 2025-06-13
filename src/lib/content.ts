@@ -13,6 +13,8 @@ export interface FrontmatterData {
   description?: string;
   tags?: string[];
   image?: string;
+  repolink?: string;
+  livedemo?: string;
 }
 
 export async function getSectionSlugs(section: string) {
