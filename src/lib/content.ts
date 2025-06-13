@@ -1,9 +1,8 @@
-"use server";
 import path from "node:path";
 import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
-import { readdirSync, readFileSync } from "fs";
+import { readdirSync, readFileSync, existsSync } from "fs";
 
 const sectionsPath = path.join(process.cwd(), "src/content/");
 
@@ -46,7 +45,29 @@ export async function getSectionData(section: string) {
 }
 
 export async function getMarkDownContent(section: string, slug: string) {
-  const fullPath = path.join(sectionsPath, section, `${slug}`);
+  // Try different file extensions
+  const possibleExtensions = [".md", ".mdx"];
+  let fullPath = "";
+  let fileExists = false;
+
+  for (const ext of possibleExtensions) {
+    const testPath = path.join(sectionsPath, section, `${slug}${ext}`);
+    if (existsSync(testPath)) {
+      fullPath = testPath;
+      fileExists = true;
+      break;
+    }
+  }
+
+  // If no file found, throw a descriptive error
+  if (!fileExists) {
+    throw new Error(
+      `Content file not found for section: ${section}, slug: ${slug}. Checked paths: ${possibleExtensions
+        .map((ext) => path.join(sectionsPath, section, `${slug}${ext}`))
+        .join(", ")}`
+    );
+  }
+
   const fileContent = readFileSync(fullPath, "utf-8");
   const { data, content } = matter(fileContent);
 

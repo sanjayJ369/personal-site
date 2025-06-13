@@ -71,7 +71,9 @@ const ContentCard = ({ data, path }: ContentCardProps) => {
         )}
 
         <Button asChild className="w-full">
-          <Link href={`${path}`}>View {data.title}</Link>
+          <Link href={`${path.trimEnd().replace(/\.md$/, "")}`}>
+            View {data.title}
+          </Link>
         </Button>
       </CardFooter>
     </Card>

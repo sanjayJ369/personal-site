@@ -58,15 +58,6 @@ export default function MarkdownRenderer({ content }: Props) {
             className="border-l-4 border-primary pl-4 py-1 my-4 bg-primary/10 rounded-r-md"
           />
         ),
-        code: ({ node, inline, ...props }) =>
-          inline ? (
-            <code
-              {...props}
-              className="bg-muted px-1.5 py-0.5 rounded-md font-mono text-sm"
-            />
-          ) : (
-            <code {...props} className="font-mono text-sm" />
-          ),
         pre: ({ node, ...props }) => (
           <pre
             {...props}
