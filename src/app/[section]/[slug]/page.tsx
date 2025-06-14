@@ -1,8 +1,11 @@
 import MarkdownRenderer from "@/components/markdown-renderer";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { getMarkDownContent } from "@/lib/content";
 import fs from "fs";
+import { Radio } from "lucide-react";
 import path from "path";
+import { siGithub } from "simple-icons";
 
 interface PageProps {
   params: Promise<{
@@ -71,6 +74,44 @@ export default async function SectionPage({ params }: PageProps) {
               </Badge>
             ))}
           </li>
+          {content.data.livedemo && (
+            <li>
+              <Button asChild className="my-2">
+                <a
+                  href={content.data.livedemo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center"
+                >
+                  <Radio />
+                  live demo
+                </a>
+              </Button>
+            </li>
+          )}
+          {content.data.repolink && (
+            <li>
+              <Button asChild className="my-2">
+                <a
+                  href={content.data.repolink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center"
+                >
+                  <svg
+                    className="mr-2 h-4 w-4"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    role="img"
+                    aria-label="GitHub"
+                  >
+                    <path d={siGithub.path} />
+                  </svg>
+                  view repository
+                </a>
+              </Button>
+            </li>
+          )}
         </ul>
         <MarkdownRenderer content={content.content} />
       </div>

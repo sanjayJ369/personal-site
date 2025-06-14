@@ -5,18 +5,17 @@ import Marquee from "@/components/ui/marquee";
 const ProfileCard = () => {
   // Marquee items - neobrutalist keywords and skills
   const marqueeItems = [
-    "DEVELOPER",
-    "WEB",
-    "CREATIVE",
-    "CODER",
-    "3D",
-    "DESIGN",
-    "TYPESCRIPT",
-    "REACT",
-    "NEXT.JS",
-    "CSS",
-    "NEOBRUTALISM",
-    "UI/UX",
+    "MY",
+    "MAP",
+    "REDUCE",
+    "BLOG",
+    "IS",
+    "OUT!",
+    "GIVE",
+    "IT",
+    "A",
+    "READ.",
+    ":)",
   ];
 
   return (

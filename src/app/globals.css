@@ -15,10 +15,10 @@
   --secondary-background: #fff8e8; /* Cream secondary - 25% usage */
   --foreground: #000000; /* Black text - for all text */
   --main-foreground: #000000;
-  --main: #ff3c38; /* Vibrant red - 10% for key elements */
-  --accent: #0064fb; /* Bold blue - 5% for accents */
+  --main: #ffab5b;
+  --accent: #0064fb;
   --border: #000000; /* Black borders - all borders */
-  --ring: #ff3c38;
+  --ring: #ffab5b;
   --overlay: rgba(0, 0, 0, 0.85);
   --shadow: 4px 4px 0px 0px #000000; /* Harsh black shadows */
 
