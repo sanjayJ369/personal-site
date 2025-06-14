@@ -1,6 +1,12 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@theme {
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 1000px; /* Your custom md breakpoint */
+  --breakpoint-lg: 1200px;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
